@@ -27,14 +27,20 @@ describe "User pages"  do
 				fill_in "Password",		with: "foobar"
 				fill_in	"Confirmation",	with: "foobar"
 			end
+
+			let(:user) { User.find_by(email: "user@example.com") }
+
 			it "should create a user" do
 				expect { click_button submit }.to change(User, :count).by(1)
+
 
 			end
 
 			it "should redirect to the page with the welcome flash" do
 				click_button submit
 				expect(page).to have_selector('div', text:"Welcome to the Sample App!")
+				puts user.name
+				expect(page).to have_title(user.name)
 			end
 		end
 
