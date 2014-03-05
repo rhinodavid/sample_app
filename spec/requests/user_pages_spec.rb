@@ -33,14 +33,17 @@ describe "User pages"  do
 			it "should create a user" do
 				expect { click_button submit }.to change(User, :count).by(1)
 
-
 			end
 
 			it "should redirect to the page with the welcome flash" do
 				click_button submit
 				expect(page).to have_selector('div', text:"Welcome to the Sample App!")
-				puts user.name
 				expect(page).to have_title(user.name)
+			end
+
+			it "should have signed the user in" do
+				click_button submit
+				expect(page).to have_content("Sign out")
 			end
 		end
 
