@@ -209,3 +209,44 @@ a.delete_link {
   border-bottom: 1px solid red;
   font-size: 0.625em;
 }
+
+/* microposts */
+.microposts {
+  list-style: none;
+  margin: 10px 0 0 0;
+
+  li {
+    padding: 10px 0;
+    border-top: 1px solid #e8e8e8
+  }
+}
+
+.content {
+  display: block;
+}
+
+.timestamp {
+  color: $grayLight;
+}
+
+.gravatar {
+  float: left;
+  margin-right: 10px;
+}
+
+aside {
+  textarea {
+    height: 100px;
+    margin-bottom: 5px;
+  }
+}
+
+.char_remaining {
+  font-style: normal;
+}
+.over_limit {
+  color: darken(red, 20);
+}
+.under_limit {
+  color: darken(green, 5);
+}
